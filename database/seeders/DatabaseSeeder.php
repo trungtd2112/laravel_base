@@ -2,7 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Entities\Admin as EntitiesAdmin;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+use App\Entities\User;
+use App\Entities\Admin;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +17,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call([
+            UserSeeder::class,
+            AdminSeeder::class
+        ]);
     }
 }
