@@ -15,7 +15,7 @@ class AdminController extends BaseAdminController
      */
     public function index()
     {
-        return view('admin::index');
+        return view('admin::layouts.master');
     }
 
     /**

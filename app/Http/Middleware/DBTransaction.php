@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\DB;
 
-class DBTransactional
+class DBTransaction
 {
     public function handle($request, Closure $next)
     {
