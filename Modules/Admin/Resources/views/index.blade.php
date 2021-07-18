@@ -1,9 +1,17 @@
-@extends('admin::layouts.master')
+@extends('admin::layouts.auth')
 
 @section('content')
-    <h1>Hello World</h1>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Dashboard</div>
 
-    <p>
-        This view is loaded from module: {!! config('admin.name') !!}
-    </p>
+                <div class="card-body">
+                    Hi boss!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
