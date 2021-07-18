@@ -4,9 +4,9 @@ namespace Modules\Web\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+use Modules\Web\Http\Controllers\BaseWebController;
 
-class WebController extends Controller
+class WebController extends BaseWebController
 {
     /**
      * Display a listing of the resource.

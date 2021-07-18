@@ -5,8 +5,9 @@ namespace Modules\Admin\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\Admin\Http\Controllers\BaseAdminController;
 
-class AdminController extends Controller
+class AdminController extends BaseAdminController
 {
     /**
      * Display a listing of the resource.
