@@ -10,14 +10,14 @@
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
-  <!-- /.login-logo -->
+  <div class="login-logo">
+    <a href="/"><b>Pira</b>Go</a>
+    <h4>Admin</h4>
+  </div>
   <div class="card card-outline card-primary">
-    <div class="card-header text-center">
-      <a href="/" class="h1"><b>Pira</b>Go</a>
-    </div>
     <div class="card-body">
-        <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
-            @csrf
+        <form method="POST" action='{{ url("admin/login") }}' aria-label="{{ __('Login') }}">
+        @csrf
         <div class="input-group mb-3">
           <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email">
           <div class="input-group-append">

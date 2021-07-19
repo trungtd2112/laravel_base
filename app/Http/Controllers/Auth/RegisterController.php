@@ -76,7 +76,7 @@ class RegisterController extends Controller
 
     public function showAdminRegisterForm()
     {
-        return view('auth.register', ['url' => 'admin']);
+        return view('admin::auth.register');
     }
 
     protected function createAdmin(Request $request)

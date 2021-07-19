@@ -16,17 +16,4 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/login/admin', [LoginController::class, 'showAdminLoginForm']);
-Route::get('/register/admin', [RegisterController::class, 'showAdminRegisterForm']);
-
-Route::post('/login/admin', [LoginController::class, 'adminLogin']);
-Route::post('/register/admin', [RegisterController::class, 'createAdmin']);
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth');

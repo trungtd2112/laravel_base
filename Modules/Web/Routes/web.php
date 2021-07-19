@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use Modules\Web\Http\Controllers\WebController;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +14,8 @@
 |
 */
 
-Route::prefix('web')->group(function() {
-    Route::get('/', 'WebController@index');
+Route::get('/', function () {
+    return view('welcome');
 });
+
+Route::get('/home', [WebController::class, 'index'])->middleware('auth');

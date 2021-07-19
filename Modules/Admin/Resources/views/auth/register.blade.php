@@ -10,12 +10,13 @@
 </head>
 <body class="hold-transition register-page">
 <div class="register-box">
+  <div class="register-logo">
+    <a href="/"><b>Pira</b>Go</a>
+    <h4>Admin</h4>
+  </div>
   <div class="card card-outline card-primary">
-    <div class="card-header text-center">
-      <a href="../../index2.html" class="h1"><b>Pira</b>Go</a>
-    </div>
     <div class="card-body">
-        <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+        <form method="POST" action='{{ url("admin/register") }}' aria-label="{{ __('Register') }}">
         @csrf
         <div class="input-group mb-3">
           <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Name">

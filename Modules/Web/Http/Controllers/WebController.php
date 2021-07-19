@@ -14,7 +14,7 @@ class WebController extends BaseWebController
      */
     public function index()
     {
-        return view('web::index');
+        return view('web::layouts.master');
     }
 
     /**
