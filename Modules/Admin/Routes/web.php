@@ -14,11 +14,11 @@ use App\Http\Controllers\Auth\RegisterController;
 |
 */
 
-Route::prefix('admin')->group(function() {
+Route::prefix('admin')->name('admin.')->group(function() {
     Route::get('/', 'AdminController@index');
-    
-    Route::get('/login', [LoginController::class, 'showAdminLoginForm']);
-    Route::get('/register', [RegisterController::class, 'showAdminRegisterForm']);
+
+    Route::get('/login', [LoginController::class, 'showAdminLoginForm'])->name('login');
+    Route::get('/register', [RegisterController::class, 'showAdminRegisterForm'])->name('register');
 
     Route::post('/login', [LoginController::class, 'adminLogin']);
     Route::post('/register', [RegisterController::class, 'createAdmin']);
