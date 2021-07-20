@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\Auth\ForgotPasswordController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\ResetPasswordController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,4 +25,10 @@ Route::prefix('admin')->name('admin.')->group(function() {
 
     Route::post('/login', [LoginController::class, 'adminLogin']);
     Route::post('/register', [RegisterController::class, 'createAdmin']);
+
+    Route::get('/password/reset/{token}', [ResetPasswordController::class, 'showAdminResetForm'])->name('password.reset');
+    Route::get('/password/reset/', [ForgotPasswordController::class, 'showAdminLinkRequestForm'])->name('password.request');
+    Route::post('/password/email', [ForgotPasswordController::class, 'sendAdminResetLinkEmail'])->name('password.email');
+    Route::post('/password/reset', [ResetPasswordController::class, 'resetAdmin'])->name('password.update');
+
 });
